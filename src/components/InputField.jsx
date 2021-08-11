@@ -4,28 +4,25 @@ import { Form, Input, Radio, Button, Checkbox } from "antd";
 const InputField = ({ title, width, extra, fieldName, placeHolder, Suffix, Style }) => {
   return (
     <>
-      {/* <div>
-        <p><b>{title}</b></p> */}
-      <Form.Item
-        label={title}
-        extra={extra}
-        style={{ width: width ? width : "70%", ...Style }}
-        name={fieldName}
-
-        rules={[
-          {
-            required: true,
-            message: `Please input ${title}!`,
-          },
-        ]}
-      >
-        <Input
-          autoComplete='off'
-          placeholder={placeHolder}
-          suffix={Suffix}
-        />
-      </Form.Item>
-      {/* </div> */}
+      <div>
+        <p style={{ marginBottom: "2px" }}><b>{title}</b></p>
+        <Form.Item
+          extra={extra}
+          name={fieldName}
+          rules={[
+            {
+              required: true,
+              message: `Please input ${title}!`,
+            },
+          ]}
+        >
+          <Input
+            autoComplete='off'
+            placeholder={placeHolder}
+            suffix={Suffix}
+          />
+        </Form.Item>
+      </div>
     </>
   )
 }
