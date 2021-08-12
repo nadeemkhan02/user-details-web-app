@@ -1,5 +1,5 @@
 **Project Name**: User Details Web Application<br/>
-**Description**: Application is able to handle the user details user can add there details and all the information is shown in the card formate which can be edit or delete by the user.<br/>
+**Description**: Application is able to handle the user details user can add there details and all the information are shown in the card formate which can be edit or delete by the user.<br/>
 **Stack Used**: React js, Redux Saga, Ant Design<br/>
 **Libraries**: React-Router-Dom for handling the routes<br/>
 <br/>
