@@ -1,7 +1,7 @@
 import React from 'react'
-import { Form, Input, Radio, Button, Checkbox } from "antd";
+import { Form, Input } from "antd";
 
-const InputField = ({ title, width, extra, fieldName, placeHolder, Suffix, Style }) => {
+const InputField = ({ title, extra, fieldName, placeHolder, Suffix }) => {
   return (
     <>
       <div>
@@ -26,33 +26,5 @@ const InputField = ({ title, width, extra, fieldName, placeHolder, Suffix, Style
     </>
   )
 }
-
-// const RadioInputField = ({ title, subTitle, fieldName, radioChange }) => {
-//   return (
-//     <>
-//       <div style={{ width: "88%", margin: "auto", marginTop: "50px" }}>
-//         <div className={styles.sub_heading}>
-//           <p><b>{title}</b></p>
-//           <p style={{ color: "#7285A8", fontSize: "14px" }}>{subTitle}</p>
-//         </div>
-//         <Form.Item
-//           name={fieldName}
-//           rules={[
-//             {
-//               required: true,
-//               message: `Please input ${title}!`,
-//             },
-//           ]}
-//         >
-//           <Radio.Group onChange={radioChange}>
-//             <Radio value={true}>Yes</Radio>
-//             <Radio value={false}>No</Radio>
-//           </Radio.Group>
-//         </Form.Item>
-//       </div>
-//     </>
-//   )
-// }
-
 
 export { InputField };

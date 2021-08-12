@@ -8,8 +8,8 @@ const App = (props) => {
   return(
     <>
         <Switch>
-          <Route exact path="/" component={UserDetails} />
-          <Route exact path="/user-details" component={ShowUserDetails} />
+          <Route exact path="/" component={ShowUserDetails} />
+          <Route exact path="/add-user" component={UserDetails} />
           <Route component={Error} />
         </Switch>
     </>

@@ -3,16 +3,15 @@ import { InputField } from "../components/InputField";
 import { Form, Input, Button, Checkbox, DatePicker, Radio, Col, Row } from 'antd';
 import { connect } from "dva";
 import { Select } from 'antd';
-import  "./UserDetails.css";
+import "./UserDetails.css";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 
 const UserDetails = (props) => {
   const [isOtherHobbies, setIsOtherHobbies] = useState(false)
-  console.log(props)
   const { user } = props
   const { colleges = [] } = user;
   const onSearch = (e) => {
-    console.log("hello", e)
     const { dispatch } = props;
     dispatch({
       type: 'user/getUserCollege',
@@ -23,21 +22,23 @@ const UserDetails = (props) => {
   }
   const handleSubmit = (data) => {
     const { user: { allUser }, dispatch, history } = props;
-    const userDetails = { ...data, 'date-picker': data['dateOfBirth'].format('YYYY-MM-DD')}
+    const newUserId = allUser.length + 1
+    const userDetails = { ...data, id: newUserId, 'dateOfBirth': data['dateOfBirth'].format('YYYY-MM-DD') }
     const allUserDetails = [...allUser]
     allUserDetails.push(userDetails)
     dispatch({
-      type:"user/setState",
-      payload:{
+      type: "user/setState",
+      payload: {
         allUser: allUserDetails,
       }
-    }).then(()=>{
-      history.push("/user-details")
+    }).then(() => {
+      history.push("/")
     })
   }
 
   return (
     <>
+      <div className="topBar"><Link to="/">&nbsp;&nbsp;<span>Go Back</span></Link></div>
       <div className="userDetails">
         <Form onFinish={handleSubmit}>
           <InputField
@@ -72,15 +73,16 @@ const UserDetails = (props) => {
               <DatePicker style={{ width: "100%" }} />
             </Form.Item>
           </Input.Group>
-          <Form.Item name="Gender" label={<b>Gender</b>} rules={[{
-            required: true, message: 'Please enter gender!' }]}>
+          <Form.Item name="gender" label={<b>Gender</b>} rules={[{
+            required: true, message: 'Please enter gender!'
+          }]}>
             <Radio.Group>
               <Radio value="male">Male</Radio>
               <Radio value="female">Female</Radio>
               <Radio value="other">Other</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item name="Hobbies" label={<b>Hobbies</b>} rules={[{
+          <Form.Item name="hobbies" label={<b>Hobbies</b>} rules={[{
             required: true, message: 'Please enter Hobbies!'
           }]}>
             <Checkbox.Group>
@@ -116,7 +118,7 @@ const UserDetails = (props) => {
           {isOtherHobbies &&
             <>
               <p style={{ marginBottom: "2px" }}><b>Other Hobbies</b></p>
-            <Form.Item name="otherHobbies" rules={[{ required: true, message:'please enter Other Hobbies' }]}>
+              <Form.Item name="otherHobbies" rules={[{ required: true, message: 'please enter Other Hobbies' }]}>
                 <Input.TextArea />
               </Form.Item>
             </>
@@ -127,7 +129,6 @@ const UserDetails = (props) => {
     </>
   )
 }
-
 export default connect(({ user }) => ({
   user,
 }))(UserDetails);
