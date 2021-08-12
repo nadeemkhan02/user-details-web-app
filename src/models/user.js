@@ -14,11 +14,9 @@ export default {
       });
     },
     *getUserCollege({ payload }, { call, put }) {
-      console.log("hello")
       try {
         const response = yield call(getUserCollegeAPI, payload);
         if (response.status == 200) {
-          console.log('response of user', response);
           yield put({
             type: 'save',
             payload: { colleges: response.data }

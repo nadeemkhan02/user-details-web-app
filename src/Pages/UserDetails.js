@@ -9,11 +9,9 @@ const { Option } = Select;
 
 const UserDetails = (props) => {
   const [isOtherHobbies, setIsOtherHobbies] = useState(false)
-  console.log(props)
   const { user } = props
   const { colleges = [] } = user;
   const onSearch = (e) => {
-    console.log("hello", e)
     const { dispatch } = props;
     dispatch({
       type: 'user/getUserCollege',

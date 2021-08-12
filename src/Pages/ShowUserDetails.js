@@ -6,7 +6,6 @@ import "./ShowUserDetails.css";
 
 const showUserDetails = (props) => {
   const { user: { allUser }, dispatch} = props;
-
   const handleDelete = (user_id) => {
     const AllUser = [...allUser]
     const allUserDetails = AllUser.filter((item) => item.id !== user_id)
