@@ -7,11 +7,12 @@
 <br/>
 <br/>
 
-step 1:Form fot adding the user data.
+step 1:Form for adding the user data.
 
 ![1](https://user-images.githubusercontent.com/72436577/129220992-912d375d-4bc9-480c-8846-ca63321bb035.png)
 
-step 2:
+step 2:Colleges Select field which contain the collges name in option field as per the user search key word.
+Api Used: http://universities.hipolabs.com/search?name=KEY_WORD
 
 ![2](https://user-images.githubusercontent.com/72436577/129221008-43f7482b-d26d-4a1d-bfda-3f8f2c0a8140.png)
 
