@@ -1,1 +1,1 @@
-export const collegeApi = 'http://universities.hipolabs.com/search'
+export const collegeApi = 'https://universities.hipolabs.com/search'

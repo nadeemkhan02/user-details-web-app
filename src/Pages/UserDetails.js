@@ -23,7 +23,8 @@ const UserDetails = (props) => {
   }
   const handleSubmit = (data) => {
     const { user: { allUser }, dispatch, history } = props;
-    const userDetails = { ...data, 'date-picker': data['dateOfBirth'].format('YYYY-MM-DD')}
+    const newUserId = allUser.length + 1
+    const userDetails = { ...data, id: newUserId, 'date-picker': data['dateOfBirth'].format('YYYY-MM-DD')}
     const allUserDetails = [...allUser]
     allUserDetails.push(userDetails)
     dispatch({
@@ -32,7 +33,7 @@ const UserDetails = (props) => {
         allUser: allUserDetails,
       }
     }).then(()=>{
-      history.push("/user-details")
+      history.push("/")
     })
   }
 
