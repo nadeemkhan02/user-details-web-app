@@ -32,6 +32,6 @@ step 6:User detail page state when more then one data is there.
 
 ![6](https://user-images.githubusercontent.com/72436577/129221027-b6bc066c-6319-4058-b67f-060a1f508492.png)
 
-step 7:User detail page state after deleting the one entry.
+step 7:404 page state when user enter the wrong path in url.
 
 ![5](https://user-images.githubusercontent.com/72436577/129221024-bf86c903-cc7e-4ae2-b4a0-f6954a8facef.png)
