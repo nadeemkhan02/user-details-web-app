@@ -1,0 +1,10 @@
+.Card .card-details{
+  margin-bottom: 5px;
+}
+.Card{
+   width: 90%;
+  margin: auto;
+}
+.gender{
+  margin-left: 50px;
+}

@@ -1,9 +1,9 @@
-import {getUserCollegeAPI} from "../services/userServices.js"
+import { getUserCollegeAPI } from "../services/userServices.js"
 export default {
   namespace: 'user',
   state: {
-    colleges : [],
-    allUser : []
+    colleges: [],
+    allUser: []
   },
 
   effects: {
