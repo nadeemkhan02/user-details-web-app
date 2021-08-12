@@ -1,7 +1,7 @@
-**Project Name**: User Details Web Application
-**Description**: Application is able to handle the user details user can add there details and all the information is shown in the card formate which can be edit or delete by the user.
-**Stack Used**: React js, Redux Saga, Ant Design
-**Libraries**: React-Router-Dom for handling the routes
+**Project Name**: User Details Web Application<br/>
+**Description**: Application is able to handle the user details user can add there details and all the information is shown in the card formate which can be edit or delete by the user.<br/>
+**Stack Used**: React js, Redux Saga, Ant Design<br/>
+**Libraries**: React-Router-Dom for handling the routes<br/>
 
 ![1](https://user-images.githubusercontent.com/72436577/129220992-912d375d-4bc9-480c-8846-ca63321bb035.png)
 ![2](https://user-images.githubusercontent.com/72436577/129221008-43f7482b-d26d-4a1d-bfda-3f8f2c0a8140.png)
