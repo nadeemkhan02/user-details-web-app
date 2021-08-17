@@ -46,7 +46,7 @@ step 7:**404 page state when user enter the wrong path in url.**
 
 **Form for editing the seleted user details.**
 
-![2](https://user-images.githubusercontent.com/72436577/129776714-693d02b2-6f46-4fa2-8244-1a8d9ca6ff79.png)
+![5](https://user-images.githubusercontent.com/72436577/129780943-15bf70b4-47e1-46da-a7d5-9cd28fe3469f.png)
 
 **ShowUserDetails page after successfully editing the user detaila.**
 
