@@ -35,3 +35,13 @@ step 6:User details page state when more then one data is there.
 step 7:404 page state when user enter the wrong path in url.
 
 ![5](https://user-images.githubusercontent.com/72436577/129221024-bf86c903-cc7e-4ae2-b4a0-f6954a8facef.png)
+
+
+![1](https://user-images.githubusercontent.com/72436577/129776701-bc67be22-b767-4a46-9dd4-dec8811dcf06.png)
+
+![2](https://user-images.githubusercontent.com/72436577/129776714-693d02b2-6f46-4fa2-8244-1a8d9ca6ff79.png)
+
+![3](https://user-images.githubusercontent.com/72436577/129776719-ddfd2ae0-b7cf-4874-b160-ba9741c8103d.png)
+
+![4](https://user-images.githubusercontent.com/72436577/129776726-2f439049-d40a-46af-a83f-e0ef34a94573.png)
+
