@@ -36,7 +36,7 @@ step 7:404 page state when user enter the wrong path in url.
 
 ![5](https://user-images.githubusercontent.com/72436577/129221024-bf86c903-cc7e-4ae2-b4a0-f6954a8facef.png)
 
-**User Details page with all the validation.**
+**User Details form with all the validations.**
 
 ![1](https://user-images.githubusercontent.com/72436577/129776701-bc67be22-b767-4a46-9dd4-dec8811dcf06.png)
 
