@@ -1,3 +1,4 @@
+//Error page for wrong url path / 404 page
 import { Result, Button } from 'antd';
 import { Link } from 'react-router-dom';
 const Error = () => {

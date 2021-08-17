@@ -1,10 +1,13 @@
 .userDetails{
   width:60%;
   margin:0px auto;
-  background-color: #FCFAED;
   padding: 70px 60px;
   border-radius: 0px 0px 20px 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.edit{
+  margin-bottom: 20px;
+  text-align: center;
 }
 .topBar{
   width:60%;
