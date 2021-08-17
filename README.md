@@ -7,7 +7,7 @@
 <br/>
 <br/>
 
-step 1:Form for adding the user data.
+step 1:**Form for adding the user details.**
 
 ![1](https://user-images.githubusercontent.com/72436577/129220992-912d375d-4bc9-480c-8846-ca63321bb035.png)
 
@@ -16,7 +16,7 @@ Api Used: http://universities.hipolabs.com/search?name=KEY_WORD
 
 ![2](https://user-images.githubusercontent.com/72436577/129221008-43f7482b-d26d-4a1d-bfda-3f8f2c0a8140.png)
 
-step 3:Date picker for date of birth selection.
+step 3:**Date picker for date of birth selection.**
 
 ![3](https://user-images.githubusercontent.com/72436577/129221011-7d9cc030-275e-4036-a542-228617d2d01f.png)
 
