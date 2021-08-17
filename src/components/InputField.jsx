@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Input } from "antd";
 
-const InputField = ({ title, extra, fieldName, placeHolder, Suffix }) => {
+const InputField = ({ title, extra, fieldName, placeHolder, Suffix, InitialValue }) => {
   return (
     <>
       <div>
@@ -12,7 +12,7 @@ const InputField = ({ title, extra, fieldName, placeHolder, Suffix }) => {
           rules={[
             {
               required: true,
-              message: `Please input ${title}!`,
+              message: `Please enter ${title}!`,
             },
           ]}
         >
@@ -20,6 +20,7 @@ const InputField = ({ title, extra, fieldName, placeHolder, Suffix }) => {
             autoComplete='off'
             placeholder={placeHolder}
             suffix={Suffix}
+            value={InitialValue}
           />
         </Form.Item>
       </div>

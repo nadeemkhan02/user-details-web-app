@@ -9,9 +9,20 @@ const { Option } = Select;
 
 const UserDetails = (props) => {
   const [isOtherHobbies, setIsOtherHobbies] = useState(false)
-  const { user } = props
+  const [editUser, setEditUser] = useState({ name: "", address: "" })
+  const { user } = props;
+  const { allUser } = user;
+  const userId = props.match.params.id;
+
+  useEffect(() => {
+    if (userId) {
+      const selectedUser = allUser.filter((item) => item.id == userId);
+      setEditUser(selectedUser[0])
+    }
+  }, [])
+
   const { colleges = [] } = user;
-  const onSearch = (e) => {
+  const onSearch = (e) => {                           //onChange function for College input field
     const { dispatch } = props;
     dispatch({
       type: 'user/getUserCollege',
@@ -20,34 +31,54 @@ const UserDetails = (props) => {
       }
     })
   }
+
   const handleSubmit = (data) => {
     const { user: { allUser }, dispatch, history } = props;
-    const newUserId = allUser.length + 1
-    const userDetails = { ...data, id: newUserId, 'dateOfBirth': data['dateOfBirth'].format('YYYY-MM-DD') }
-    const allUserDetails = [...allUser]
-    allUserDetails.push(userDetails)
-    dispatch({
-      type: "user/setState",
-      payload: {
-        allUser: allUserDetails,
-      }
-    }).then(() => {
-      history.push("/")
-    })
+    if (userId) {                                     //for editing the user details
+      const editedUserId = userId;
+      const editedUser = [{ ...data, id: editedUserId, 'dateOfBirth': data['dateOfBirth'].format('YYYY-MM-DD') }]
+      console.log(editedUser)
+      console.log(allUser)
+      const editedUserDeatils = allUser.map(item => editedUser.find(val => val.id == item.id) || item);
+      dispatch({
+        type: "user/setState",
+        payload: {
+          allUser: editedUserDeatils,
+        }
+      }).then(() => {
+        history.push("/")
+      })
+    } else {                                            //for adding new user details
+      const newUserId = allUser.length + 1
+      const userDetails = { ...data, id: newUserId, 'dateOfBirth': data['dateOfBirth'].format('YYYY-MM-DD') }
+      const allUserDetails = [...allUser]
+      allUserDetails.unshift(userDetails)
+      dispatch({
+        type: "user/setState",
+        payload: {
+          allUser: allUserDetails,
+        }
+      }).then(() => {
+        history.push("/")
+      })
+    }
   }
 
   return (
     <>
       <div className="topBar"><Link to="/">&nbsp;&nbsp;<span>Go Back</span></Link></div>
-      <div className="userDetails">
+      <div style={{ backgroundColor: userId ? "#e5edf1" : "#FCFAED"}} className="userDetails">
+        {userId ? <h3 className="edit">Hello {editUser.name}, Edit Your User Details...</h3> : null}
         <Form onFinish={handleSubmit}>
           <InputField
             title="Full Name:"
             fieldName="name"
+            InitialValue={editUser.name}
           />
           <InputField
             title="Address:"
             fieldName="address"
+            InitialValue={editUser.address}
           />
           <Input.Group compact>
             <Form.Item
@@ -55,6 +86,7 @@ const UserDetails = (props) => {
               label={<b>College</b>}
               name="collegeName"
               rules={[{ required: true, message: 'please select College' }]}
+              initialValue={editUser.college}
             >
               <Select
                 showSearch
@@ -123,12 +155,13 @@ const UserDetails = (props) => {
               </Form.Item>
             </>
           }
-          <Button type="primary" htmlType="submit">+&nbsp;ADD USER</Button>
+          <Button type="primary" htmlType="submit">{userId ? <span>Edit User</span> : <span>+&nbsp;ADD USER</span>}</Button>
         </Form>
       </div>
     </>
   )
 }
+
 export default connect(({ user }) => ({
   user,
 }))(UserDetails);

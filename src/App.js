@@ -9,7 +9,7 @@ const App = (props) => {
     <>
         <Switch>
           <Route exact path="/" component={ShowUserDetails} />
-          <Route exact path="/add-user" component={UserDetails} />
+        <Route exact path="/add-user/:id?" component={UserDetails} />
           <Route component={Error} />
         </Switch>
     </>
